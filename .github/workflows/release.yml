@@ -1,12 +1,11 @@
-name: Build Dockerfile
+name: Build Dockerfile on Release
 
 on:
-  push:
-    branches: [ master ]
+  release:
+    types: [ published ]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -14,6 +13,6 @@ jobs:
     - uses: machine-learning-apps/gpr-docker-publish@master
       with:
         IMAGE_NAME: 'docker-actions-test'
-        TAG: 'dev'
+        TAG: 'production'
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
