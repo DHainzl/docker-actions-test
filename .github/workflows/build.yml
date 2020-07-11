@@ -16,5 +16,6 @@ jobs:
     - uses: machine-learning-apps/gpr-docker-publish@master
       with:
         IMAGE_NAME: 'docker-actions-test'
+        TAG: 'dev'
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
